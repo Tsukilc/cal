@@ -13,11 +13,35 @@ public class Cal {
         return ch >= '0' && ch <= '9';
     }
 
+
+    private static boolean isValidExpression(String expr) {
+        Stack<Character> stack = new Stack<>();
+        for (int i = 0; i < expr.length(); i++) {
+            char c = expr.charAt(i);
+            if (c == '(') {
+                stack.push(c);
+            } else if (c == ')') {
+                if (stack.isEmpty() || stack.pop() != '(') {
+                    return false;  // 括号不匹配
+                }
+            } else if (!isDigit(c) && !Cal.isOperator(c) ) {
+                return false;  // 包含非法字符
+            }
+        }
+        return stack.isEmpty();  // 如果栈为空，括号匹配正确
+    }
+
+
     // 解析和计算分数
     public static String evaluateExpression(String expr) {
         try {
             // 去掉所有空格
             expr = expr.replaceAll(" ", "");
+
+            // 验证表达式的有效性
+            if (!isValidExpression(expr)) {
+                throw new IllegalArgumentException("Invalid expression");
+            }
 
             // 使用栈来处理表达式
             Stack<BigInteger> numerators = new Stack<>();  // 分子栈
@@ -101,7 +125,7 @@ public class Cal {
     }
 
     // 判断字符是否是操作符
-    private static boolean isOperator(char c) {
+    static boolean isOperator(char c) {
         return c == '+' || c == '-' || c == '*' || c == '/';
     }
 

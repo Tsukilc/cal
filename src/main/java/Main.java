@@ -102,7 +102,7 @@ public class Main {
 
 
     public static void main(String[] args) {
-        int numQuestions = 10;
+        int numQuestions = 10000;
         int rangeLimit = 10;
 
         // 检查参数数量是否正确

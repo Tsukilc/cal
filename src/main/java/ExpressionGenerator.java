@@ -13,6 +13,7 @@ public class ExpressionGenerator {
     private static final int MAX_OPERATORS = 3; // 最大运算符数量
     private static final double BRACKET_PROBABILITY = 0.7; // 括号出现的概率
 
+
     // 生成表达式的方法
     public static String generateExpression(int numOperations, int rangeLimit) {
         if (numOperations > MAX_OPERATORS) {
@@ -62,6 +63,8 @@ public class ExpressionGenerator {
                 expression.append(")");
             }
         }
+
+
 
         // 确保括号正确匹配
         String result = expression.toString().replaceAll("\\(\\s*\\*", "\\(\\*").replaceAll("\\(\\s*/", "\\(/");
