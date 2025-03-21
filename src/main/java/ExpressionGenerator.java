@@ -11,7 +11,7 @@ public class ExpressionGenerator {
 
     private final static Random random = new Random();
     private static final int MAX_OPERATORS = 3; // 最大运算符数量
-    private static final double BRACKET_PROBABILITY = 0.4; // 括号出现的概率
+    private static final double BRACKET_PROBABILITY = 0.7; // 括号出现的概率
 
     // 生成表达式的方法
     public static String generateExpression(int numOperations, int rangeLimit) {
