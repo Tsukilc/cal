@@ -108,7 +108,7 @@ public class Main {
         // 检查参数数量是否正确
         if (args.length < 3) {
             System.out.println("错误：缺少必要的命令行参数，讲启用默认值生成");
-            System.out.println("用法示例: java -jar ArithmeticGenerator.jar -n 10 -r 100 -e Exercises.txt -a Answers.txt");
+            System.out.println("用法示例: java -jar cal-1.0-SNAPSHOT.jar -n 10 -r 100 -e Exercises.txt -a Answers.txt");
             System.out.println("参数说明:");
             System.out.println("  -n [生成题目的个数]  // 生成的题目数量");
             System.out.println("  -r [题目中数值的范围]  // 题目中数值的最大值");

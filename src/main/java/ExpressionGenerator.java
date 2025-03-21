@@ -64,8 +64,6 @@ public class ExpressionGenerator {
             }
         }
 
-
-
         // 确保括号正确匹配
         String result = expression.toString().replaceAll("\\(\\s*\\*", "\\(\\*").replaceAll("\\(\\s*/", "\\(/");
 
